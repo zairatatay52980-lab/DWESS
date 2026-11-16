@@ -1,0 +1,49 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contenedor-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+    align-items: start; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+form {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 15px; 
+}
+
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: auto;
+    justify-self: start; 
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}

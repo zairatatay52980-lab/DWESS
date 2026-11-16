@@ -1,0 +1,17 @@
+{
+    "name": "142ga10/ejercicio2",
+    "autoload": {
+        "psr-4": {
+            "142ga10\\Ejercicio2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "zairatatay52980-lab",
+            "email": "zaira.tatay.52980@ikasle.egibide.org"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^3.12"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "142ga10/ejercicio1",
+    "autoload": {
+        "psr-4": {
+            "142ga10\\Ejercicio1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "zairatatay52980-lab",
+            "email": "zaira.tatay.52980@ikasle.egibide.org"
+        }
+    ],
+    "require": {
+        "phpunit/php-timer": "^8.0"
+    }
+}
