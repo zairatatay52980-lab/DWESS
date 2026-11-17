@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActivityController;
+use App\Http\COntrollers\CategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,6 +26,15 @@ Route::get('/about/{nombre}', function (string $nombre){
 
 Route::get('/activities', [ActivityController::class, 'index'])
     ->name('activities.index');
+
+
+Route::get('/activities/{id}', [ActivityController::class, 'show'])
+    ->name('activities.show');
+
+Route::get('/categories/{slug}', [CategoryController::class, 'show'])
+->where('slug', '[a-z-]+')
+    ->name('categories.show');
+
 
 
 
