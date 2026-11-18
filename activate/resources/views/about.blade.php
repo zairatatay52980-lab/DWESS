@@ -6,8 +6,11 @@
         <title>About</title>
     </head>
     <body>
-        <h1>Sobre activate</h1>
-        <p>El nombre de la app {{ $nombre }}</p>
+        <x-layout title="Activate">
+            <h1>Informacion </h1>
+            <p>Pagina de informacion </p>
+
+        </x-layout>
     </body>
 
     
