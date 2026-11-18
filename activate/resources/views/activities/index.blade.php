@@ -21,6 +21,7 @@
                     </a>
                     
                     (<a href="{{ route('categories.show', $activity['category']) }}">{{ $activity['category'] }}</a>)
+                    
                     Lugar: {{ $activity['location'] }} | 
                     Fecha: {{ $activity['starts_at'] }} | 
                     Capacidad: {{ $activity['capacity'] }}

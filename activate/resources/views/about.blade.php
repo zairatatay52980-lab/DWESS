@@ -11,6 +11,17 @@
             <p>Pagina de informacion </p>
 
         </x-layout>
+        
+        <x-layout title="Actividades">
+            <h1>Listado de actividades</h1>
+
+            @foreach ($activities as $activity)
+                <article>
+                    <h3>{{ $activity['title'] ?? $activity->title }}</h3>
+                    <p>{{ $activity['description'] ?? $activity->description }}</p>
+                </article>
+            @endforeach
+        </x-layout>
     </body>
 
     

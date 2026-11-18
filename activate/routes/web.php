@@ -35,6 +35,7 @@ Route::get('/categories/{slug}', [CategoryController::class, 'show'])
 ->where('slug', '[a-z-]+')
     ->name('categories.show');
 
-Route::view('/about', 'about')->name('about');
+Route::get('/activities', [ActivityController::class, 'index']);
 
+Route::view('/about', 'about')->name('about');
 
