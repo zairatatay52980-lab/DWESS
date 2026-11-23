@@ -7,7 +7,7 @@ use Illuminate\View\View;
 
 class ActivityController extends Controller
 {
-    private function activities(): array
+    public function activities(): array
     {
         return [
             1 => ['id' => 1, 'title' => 'Taller de Git y GitHub', 'category' => 'taller', 'location' => 'Aula 101', 'starts_at' => '2026-12-02 16:00', 'capacity' => 20],
@@ -19,26 +19,46 @@ class ActivityController extends Controller
             7 => ['id' => 7, 'title' => 'Prueba2', 'category' => 'taller', 'location' => 'Laboratorio 2', 'starts_at' => '2027-01-14 16:00', 'capacity' => 18],
             8 => ['id' => 8, 'title' => 'Prueba3', 'category' => 'taller', 'location' => 'Laboratorio 2', 'starts_at' => '2027-01-14 16:00', 'capacity' => 18],
         ];
-    }
-
-    public function index(Request $request){
-        $activities = $this -> activities();
-
-        return view('activities.index', ['activities' => $activities]);
-
-    }
     
-    public function show(int $id): View{
+    }
+    public function index(Request $request): View
+    {
         $activities = $this->activities();
 
+        return view('activities.index', ['activities' => $activities]);
+    }
+    
+    public function show(int $id): View
+    {
+        $activities = $this->activities();
         $activity = $activities[$id] ?? null;
         
-        if(!$activity){
+        if (!$activity) {
             abort(404);
         }
 
         return view('activities.detalle', ['activity' => $activity]);
     }
-    
+
+    public function about(): View
+    {
+        $activities = $this->activities();
+
+        return view('about', compact('activities'));
+    }
+
+
+    public function category(string $category): View
+    {
+        $activities = array_filter(
+            $this->activities(),
+            fn ($activity) => $activity['category'] === $category
+        );
+
+        return view('activities.category', [
+            'activities' => $activities,
+            'category' => $category,
+        ]);
+    }
 
 }
