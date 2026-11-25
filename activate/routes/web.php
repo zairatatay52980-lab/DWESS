@@ -42,3 +42,5 @@ Route::view('/about', 'about')
 
 Route::get('/activities/category/{category}', [ActivityController::class, 'category']);
 
+Route::get('/categories/{id}', [CategoryController::class, 'detalles']);
+

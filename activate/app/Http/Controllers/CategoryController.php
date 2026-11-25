@@ -36,5 +36,17 @@ class CategoryController extends Controller
 
 
     }
+
+    public function detalles(int $id): View
+    {
+        $activities = $this->activities();
+        $activity = $activities[$id] ?? null;
+        
+        if (!$activity) {
+            abort(404);
+        }
+
+        return view('activities.detalle', ['activity' => $activity]);
+    }
     
 }
